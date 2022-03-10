@@ -1,0 +1,18 @@
+
+<p style="color: green"><%= notice %></p>
+
+<div>
+<div class="card">
+  <div class="card-header">
+    Movies Details 
+  </div>
+  <div class="card-body">
+    <h5 class="card-title"><%= @movie_diary.title %></h5>
+    <p class="card-text"> <%= @movie_diary.fact %> </p>
+    
+  </div>
+</div>
+  <%= link_to "Edit this movie diary", edit_movie_diary_path(@movie_diary), class:"btn btn-warning m-2" %>
+  <%= link_to "Back   to movie diaries", movie_diaries_path, class:"btn btn-primary m-2" %>
+  <%= button_to "Delete this movie", @movie_diary, method: :delete, class:"btn btn-danger m-1" %>
+</div>

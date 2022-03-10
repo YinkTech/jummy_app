@@ -1,0 +1,2 @@
+class MovieDiary < ApplicationRecord
+end

@@ -1,0 +1,28 @@
+<p style="color: green"><%= notice %></p>
+
+<h1 class="my-3 font-monospace">Movie diaries</h1>
+
+<table id="movie_diaries" class="table table-striped ">
+  <thead class="table-primary">
+        <tr>
+      <th scope="col">Movie Title</th>
+      <th scope="col mx-3">Fu Fact</th>
+      <th scope="col">Date to Watch</th>
+      <th scope="col"></th>
+      <th scope="col"></th>
+    </tr>
+  </thead>
+  <tbody>
+  <% @movie_diaries.each do |movie_diary| %>
+    <tr>
+      <td><%= movie_diary.title %></td>
+      <td><%= movie_diary.fact %></td>
+      <td><%= movie_diary.date %></td>
+      <td><%= link_to "Show this movie diary", movie_diary, class:"btn btn-success" %></td>
+      <td><%= button_to "Delete this test", @test, method: :delete, class:"btn btn-danger", data: { confirm: "Are you sure?"} %></td>
+    </tr>
+      <% end %>
+  </tbody>
+</table>
+ <%= link_to "New movie diary", new_movie_diary_path, class:"btn btn-info" %> 
+

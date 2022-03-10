@@ -1,0 +1,2 @@
+module MovieDiariesHelper
+end

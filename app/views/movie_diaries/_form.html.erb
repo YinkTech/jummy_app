@@ -1,0 +1,32 @@
+<%= form_with(model: movie_diary) do |form| %>
+  <% if movie_diary.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(movie_diary.errors.count, "error") %> prohibited this movie_diary from being saved:</h2>
+
+      <ul>
+        <% movie_diary.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="m-3">
+    <%= form.label :title, style: "display: block", for:"title", class:"form-label fs-3" %>
+    <%= form.text_area :title, class:"form-control", id:"title", placeholder:"Title Name" %>
+  </div>
+
+  <div class="m-3">
+    <%= form.label :fact, style: "display: block", for:"fact", class:"form-label fs-3" %>
+    <%= form.text_area :fact, class:"form-control", id:"fact", placeholder:"Fun Facts", rows:"3" %>
+  </div>
+
+  <div class="m-3">
+    <%= form.label :date, style: "display: block", for:"date", class:"form-label fs-3" %>
+    <%= form.date_field :date, class:"form-control", id:"date", rows:"3" %>
+  </div>
+
+  <div>
+    <%= form.submit class:'btn btn-success m-3' %>
+  </div>
+<% end %>
