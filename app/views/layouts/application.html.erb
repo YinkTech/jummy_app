@@ -20,6 +20,9 @@
   <body>
   <%= render 'movie_diaries/header' %>
   <div class="container">
+  <%if notice %>
+    <%= render 'layouts/alert'%>
+  <%end%>
     <%= yield %>
     </div
   </body>
